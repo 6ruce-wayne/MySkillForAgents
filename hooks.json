@@ -1,0 +1,31 @@
+﻿{
+  "scope-guard": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "read_file|view_file|Read|write_file|edit_file|Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ./skills/scope/scripts/scope-hook.cjs pre-tool",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreInvocation": [
+      {
+        "type": "command",
+        "command": "node ./skills/scope/scripts/scope-hook.cjs pre-invocation",
+        "timeout": 5
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node ./skills/scope/scripts/scope-hook.cjs stop",
+        "timeout": 5
+      }
+    ]
+  }
+}

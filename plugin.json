@@ -1,0 +1,13 @@
+﻿{
+  "name": "MySkillForAgents",
+  "description": "Custom skills, lifecycle hooks, and workflow rules for AI Agent Harnesses (Antigravity, Claude Code, Gemini CLI, Cursor).",
+  "version": "1.0.0",
+  "author": {
+    "name": "Parinya Kanchai",
+    "url": "https://rmzstudio.xyz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/6ruce-wayne/MySkillForAgents"
+  }
+}
