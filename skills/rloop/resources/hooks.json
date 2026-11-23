@@ -1,0 +1,17 @@
+{
+  "rloop-guard": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "edit_file|write_file|run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python ./scripts/rloop_guard.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

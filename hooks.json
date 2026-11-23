@@ -27,5 +27,20 @@
         "timeout": 5
       }
     ]
+  },
+  "rloop-guard": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "edit_file|write_file|Edit|Write|run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python ./skills/rloop/scripts/rloop_guard.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
   }
 }
