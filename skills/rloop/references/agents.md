@@ -79,13 +79,19 @@ Responsibilities:
    - Exact tests to add or update
    - Rollback/migration considerations
 3. Implement the changes cleanly following `.rloop/plan.md`, `.rloop/spec.md`, and `AGENTS.md`.
-4. Team Knowledge & 2-Strike Enforcement Rule:
+4. STRICT No AI-Slop Comments Rule:
+   - NEVER add comments with "AI slop" characteristics:
+     - No narrating obvious code (e.g. `// increment counter`, `// return result`, `// loop through items`).
+     - No conversational/meta chatter (e.g. `// Here we...`, `// This function does...`, `// Fix for...`, `// Updated to...`).
+     - No redundant section banners or restating what identifiers already express.
+   - Only write concise comments when explaining a **non-obvious why** (invariants, edge-case constraints, workarounds, or ordering requirements), and preserve existing unrelated comments/docstrings.
+5. Team Knowledge & 2-Strike Enforcement Rule:
    - Track mistakes or gotchas encountered during development in `.rloop/mistakes-log.json` (or `AGENTS.md`).
    - STRICT RULE: If the SAME mistake occurs 2 times:
      a) Permanently record the rule and rationale under `## Rloop Learned Rules (2-Strike Log)` in `AGENTS.md`.
      b) Add a deterministic blocking entry (regex/command/file pattern) into `.rloop/blocked-patterns.json` so the `rloop_guard.py` hook automatically blocks it going forward.
-5. Do NOT bypass or disable `.agents/hooks.json` or `rloop_guard.py`.
-6. When implementation is ready:
+6. Do NOT bypass or disable `.agents/hooks.json` or `rloop_guard.py`.
+7. When implementation is ready:
    - Update `.rloop/state.json` (`currentPhase: "tester"`).
    - Stage and commit `.rloop/plan.md`, source changes, `AGENTS.md`, `.rloop/blocked-patterns.json`, and `.rloop/state.json` with message:
      `rloop(developer): implement spec per plan.md [round-<N>]`
